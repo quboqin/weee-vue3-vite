@@ -26,8 +26,35 @@
       </div>
     </header>
     <swiper :list="swiperList"></swiper>
-    <div class="category"></div>
-    <div class="recommennd"></div>
+    <div class="category-list">
+      <div
+        v-for="item in categoryList"
+        v-bind:key="item.categoryId"
+        @click="tips"
+      >
+        <img :src="item.imgUrl" />
+        <span>{{ item.name }}</span>
+      </div>
+    </div>
+    <div class="good">
+      <header class="good-header">新品上线</header>
+      <van-skeleton title :row="3" :loading="loading">
+        <div class="good-box">
+          <div
+            class="good-item"
+            v-for="item in newGoodses"
+            :key="item.goodsId"
+            @click="goToDetail(item)"
+          >
+            <img :src="item.goodsCoverImg" alt="" />
+            <div class="good-desc">
+              <div class="title">{{ item.goodsName }}</div>
+              <div class="price">¥ {{ item.sellingPrice }}</div>
+            </div>
+          </div>
+        </div>
+      </van-skeleton>
+    </div>
   </div>
 </template>
 
@@ -60,6 +87,44 @@ export default defineComponent({
         },
       ],
       recommends: [],
+      newGoodses: [
+        {
+          goodsId: 10909,
+          goodsName: 'HUAWEI Mate 40 Pro+ 5G 全网通 12G...',
+          goodsIntro: '5nm麒麟9000旗舰芯片 | 超感光徕卡电...',
+          goodsCoverImg:
+            'https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/mate40pro%2B.png',
+          sellingPrice: 7988,
+          tag: '跃见非凡',
+        },
+        {
+          goodsId: 10908,
+          goodsName: 'HUAWEI Mate 40 Pro 全网通5G手机 8GB...',
+          goodsIntro: '5nm麒麟9000旗舰芯片 | 超感光徕卡电...',
+          goodsCoverImg:
+            'https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/mate40-white.png',
+          sellingPrice: 6488,
+          tag: '跃见非凡',
+        },
+        {
+          goodsId: 10902,
+          goodsName: '华为 HUAWEI P40 冰霜银 全网通5G手机',
+          goodsIntro: '麒麟990 5G SoC芯片 5000万超感...',
+          goodsCoverImg:
+            'https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/p40-silver.png',
+          sellingPrice: 4299,
+          tag: '超感知影像',
+        },
+        {
+          goodsId: 10907,
+          goodsName: 'HUAWEI Mate 40 Pro 全网通5G手机 8GB...',
+          goodsIntro: '5nm麒麟9000旗舰芯片 | 超感光徕卡电...',
+          goodsCoverImg:
+            'https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/mate40-silver.png',
+          sellingPrice: 6488,
+          tag: '跃见非凡',
+        },
+      ],
       categoryList: [
         {
           name: '新蜂超市',
@@ -121,7 +186,7 @@ export default defineComponent({
           categoryId: 100010,
         },
       ],
-      loading: true,
+      loading: false,
     })
     return {
       ...toRefs(state),
@@ -202,6 +267,63 @@ export default defineComponent({
   }
   .search-bar {
     flex-basis: 100%;
+  }
+}
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-bottom: 13px;
+  div {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    text-align: center;
+    img {
+      .wh(36px, 36px);
+      margin: 13px auto 8px auto;
+    }
+  }
+}
+.good {
+  .good-header {
+    background: #f9f9f9;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: @primary;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .good-box {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .good-item {
+      box-sizing: border-box;
+      width: 50%;
+      border-bottom: 1px solid #e9e9e9;
+      padding: 10px 10px;
+      img {
+        display: block;
+        width: 120px;
+        margin: 0 auto;
+      }
+      .good-desc {
+        text-align: center;
+        font-size: 14px;
+        padding: 10px 0;
+        .title {
+          color: #222333;
+        }
+        .price {
+          color: @primary;
+        }
+      }
+      &:nth-child(2n + 1) {
+        border-right: 1px solid #e9e9e9;
+      }
+    }
   }
 }
 </style>
