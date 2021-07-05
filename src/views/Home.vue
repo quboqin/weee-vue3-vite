@@ -62,6 +62,10 @@
 import { defineComponent, reactive, toRefs } from 'vue'
 import Swiper from '@/components/Swiper.vue'
 
+import carousel from '../mock/carousel.json'
+import category from '../mock/category.json'
+import goods from '../mock/goods.json'
+
 export default defineComponent({
   name: 'home',
   components: {
@@ -69,123 +73,9 @@ export default defineComponent({
   },
   setup() {
     const state = reactive({
-      swiperList: [
-        {
-          carouselUrl:
-            'https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/banner-mate40.png',
-          redirectUrl: 'https://juejin.im/book/6844733826191589390',
-        },
-        {
-          carouselUrl:
-            'https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/banner1.png',
-          redirectUrl: 'https://juejin.im/book/6844733826191589390',
-        },
-        {
-          carouselUrl:
-            'https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/banner2.png',
-          redirectUrl: 'https://juejin.im/book/6844733826191589390',
-        },
-      ],
-      recommends: [],
-      newGoodses: [
-        {
-          goodsId: 10909,
-          goodsName: 'HUAWEI Mate 40 Pro+ 5G 全网通 12G...',
-          goodsIntro: '5nm麒麟9000旗舰芯片 | 超感光徕卡电...',
-          goodsCoverImg:
-            'https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/mate40pro%2B.png',
-          sellingPrice: 7988,
-          tag: '跃见非凡',
-        },
-        {
-          goodsId: 10908,
-          goodsName: 'HUAWEI Mate 40 Pro 全网通5G手机 8GB...',
-          goodsIntro: '5nm麒麟9000旗舰芯片 | 超感光徕卡电...',
-          goodsCoverImg:
-            'https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/mate40-white.png',
-          sellingPrice: 6488,
-          tag: '跃见非凡',
-        },
-        {
-          goodsId: 10902,
-          goodsName: '华为 HUAWEI P40 冰霜银 全网通5G手机',
-          goodsIntro: '麒麟990 5G SoC芯片 5000万超感...',
-          goodsCoverImg:
-            'https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/p40-silver.png',
-          sellingPrice: 4299,
-          tag: '超感知影像',
-        },
-        {
-          goodsId: 10907,
-          goodsName: 'HUAWEI Mate 40 Pro 全网通5G手机 8GB...',
-          goodsIntro: '5nm麒麟9000旗舰芯片 | 超感光徕卡电...',
-          goodsCoverImg:
-            'https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/mate40-silver.png',
-          sellingPrice: 6488,
-          tag: '跃见非凡',
-        },
-      ],
-      categoryList: [
-        {
-          name: '新蜂超市',
-          imgUrl:
-            'https://s.yezgea02.com/1604041127880/%E8%B6%85%E5%B8%82%402x.png',
-          categoryId: 100001,
-        },
-        {
-          name: '新蜂服饰',
-          imgUrl:
-            'https://s.yezgea02.com/1604041127880/%E6%9C%8D%E9%A5%B0%402x.png',
-          categoryId: 100003,
-        },
-        {
-          name: '全球购',
-          imgUrl:
-            'https://s.yezgea02.com/1604041127880/%E5%85%A8%E7%90%83%E8%B4%AD%402x.png',
-          categoryId: 100002,
-        },
-        {
-          name: '新蜂生鲜',
-          imgUrl:
-            'https://s.yezgea02.com/1604041127880/%E7%94%9F%E9%B2%9C%402x.png',
-          categoryId: 100004,
-        },
-        {
-          name: '新蜂到家',
-          imgUrl:
-            'https://s.yezgea02.com/1604041127880/%E5%88%B0%E5%AE%B6%402x.png',
-          categoryId: 100005,
-        },
-        {
-          name: '充值缴费',
-          imgUrl:
-            'https://s.yezgea02.com/1604041127880/%E5%85%85%E5%80%BC%402x.png',
-          categoryId: 100006,
-        },
-        {
-          name: '9.9元拼',
-          imgUrl: 'https://s.yezgea02.com/1604041127880/9.9%402x.png',
-          categoryId: 100007,
-        },
-        {
-          name: '领劵',
-          imgUrl:
-            'https://s.yezgea02.com/1604041127880/%E9%A2%86%E5%88%B8%402x.png',
-          categoryId: 100008,
-        },
-        {
-          name: '省钱',
-          imgUrl:
-            'https://s.yezgea02.com/1604041127880/%E7%9C%81%E9%92%B1%402x.png',
-          categoryId: 100009,
-        },
-        {
-          name: '全部',
-          imgUrl:
-            'https://s.yezgea02.com/1604041127880/%E5%85%A8%E9%83%A8%402x.png',
-          categoryId: 100010,
-        },
-      ],
+      swiperList: carousel,
+      newGoodses: goods,
+      categoryList: category,
       loading: false,
     })
     return {
@@ -199,26 +89,28 @@ export default defineComponent({
 @import '../common/style/mixin';
 .home-header {
   position: fixed;
-  background: rgba(194, 194, 194, 0.486);
   left: 0;
   top: 0;
-  .wh(100%, 116px);
+  .wh(100%, 110px);
+  background: rgba(194, 194, 194, 0.486);
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: bottom;
+  // align-content: flex-start;
   padding: 0 5px;
   .boxSizing();
   font-size: 15px;
   z-index: 10000;
   .deliver-bar {
-    flex-basis: 100%;
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
     .address {
-      flex-basis: 10%;
+      flex-grow: 3;
+      flex-shrink: 0;
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
@@ -246,12 +138,13 @@ export default defineComponent({
       }
     }
     .deliver-date {
-      flex-basis: 60%;
+      flex-grow: 6;
+      flex-shrink: 1;
       display: flex;
-      .wh(74%, 20px);
+      .wh(100%, 20px);
       line-height: 20px;
-      margin: 10px 0;
-      padding: 5px 0;
+      margin: 5px 5px;
+      padding: 5px 0px;
       justify-content: space-around;
       color: #232326;
       background: rgba(255, 255, 255, 0.7);
@@ -261,12 +154,13 @@ export default defineComponent({
       }
     }
     .cart {
+      flex-grow: 1;
+      flex-shrink: 0;
       text-align: center;
-      flex-basis: 10%;
     }
   }
   .search-bar {
-    flex-basis: 100%;
+    width: 100%;
   }
 }
 .category-list {
@@ -282,6 +176,9 @@ export default defineComponent({
     img {
       .wh(36px, 36px);
       margin: 13px auto 8px auto;
+    }
+    span {
+      font-size: 12px;
     }
   }
 }

@@ -1,0 +1,17 @@
+[
+  {
+    "carouselUrl":
+      "https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/banner-mate40.png",
+    "redirectUrl": "https://juejin.im/book/6844733826191589390"
+  },
+  {
+    "carouselUrl":
+      "https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/banner1.png",
+    "redirectUrl": "https://juejin.im/book/6844733826191589390"
+  },
+  {
+    "carouselUrl":
+      "https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/banner2.png",
+    "redirectUrl": "https://juejin.im/book/6844733826191589390"
+  }
+]

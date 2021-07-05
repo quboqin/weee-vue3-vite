@@ -30,7 +30,7 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .home-swipe {
-  margin: 116px 0 0 0;
+  margin: 110px 0 0 0;
   img {
     width: 100%;
     height: 100%;
