@@ -12,7 +12,7 @@
           round
           width="4rem"
           height="4rem"
-          src="https://img.yzcdn.cn/vant/cat.jpeg"
+          :src="avatarUrl"
         />
         <div class="name">
           <div>QQB</div>
@@ -29,8 +29,15 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+import avatarUrl from '@/assets/avatar.jpg'
+
 export default defineComponent({
   name: 'profile',
+  setup() {
+    return {
+      avatarUrl,
+    }
+  },
 })
 </script>
 
