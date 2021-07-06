@@ -8,6 +8,7 @@ import {
   Skeleton,
   Tab,
   Tabs,
+  Image,
 } from 'vant'
 
 import App from './App.vue'
@@ -24,5 +25,6 @@ app
   .use(Skeleton)
   .use(Tab)
   .use(Tabs)
+  .use(Image)
 app.use(router)
 app.mount('#app')
