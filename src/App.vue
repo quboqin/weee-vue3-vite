@@ -1,8 +1,6 @@
 <template>
-  <div id="root">
-    <router-view />
-    <tab-bar></tab-bar>
-  </div>
+  <router-view />
+  <tab-bar></tab-bar>
 </template>
 
 <script lang="ts">
@@ -18,7 +16,7 @@ export default defineComponent({
 </script>
 
 <style>
-#root {
+#app {
   height: 100%;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,14 +1,17 @@
 @primary: #1baeae;
 
+@iconSize: 22px;
+@iconTitle: 12px;
+
 .wh(@width, @height){
   width: @width;
   height: @height;
 }
 
-.fj(@type: space-between){
+.flex(@justify: space-between, @align: center){
   display: flex;
-  justify-content: @type;
-  align-items: center;
+  justify-content: @justify;
+  align-items: @align;
 }
 
 .boxSizing {

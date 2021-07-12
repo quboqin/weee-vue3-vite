@@ -1,16 +1,14 @@
 <template>
-  <div class="tab-bar van-hairline--top">
-    <ul class="tab-list">
-      <router-link
-        v-for="tab in tabs"
-        :key="tab.to"
-        class="tab-list-item active"
-        :to="tab.to"
-      >
-        <van-icon :name="tab.icon" />
-        <span>{{ tab.title }}</span>
-      </router-link>
-    </ul>
+  <div class="tab-bar">
+    <router-link
+      v-for="tab in tabs"
+      :key="tab.to"
+      class="tab-bar-item"
+      :to="tab.to"
+    >
+      <van-icon :name="tab.icon" />
+      <span>{{ tab.title }}</span>
+    </router-link>
   </div>
 </template>
 
@@ -35,7 +33,6 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
-@import '../common/style/mixin';
 .tab-bar {
   position: fixed;
   left: 0;
@@ -43,30 +40,27 @@ export default defineComponent({
   width: 100%;
   padding: 5px 0;
   z-index: 1000;
-  background: #fff;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  .tab-list {
-    width: 100%;
-    .fj();
-    flex-direction: row;
-    padding: 0;
-    .tab-list-item {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      text-align: center;
+  background: #fff2f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px 0px;
+  .tab-bar-item {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #1baeae;
+    &.router-link-active {
       color: #666;
-      &.router-link-active {
-        color: @primary;
-      }
-      i {
-        text-align: center;
-        font-size: 22px;
-      }
-      span {
-        font-size: 12px;
-      }
+    }
+    i {
+      text-align: center;
+      font-size: 22px;
+    }
+    span {
+      font-size: 12px;
     }
   }
 }

@@ -7,18 +7,25 @@
     </header>
     <div class="profile-body">
       <div class="my-profile">
-        <van-image
-          class="avatar"
-          round
-          width="4rem"
-          height="4rem"
-          :src="avatarUrl"
-        />
-        <div class="name">
-          <div>QQB</div>
-          <div>ID: weee7343219</div>
+        <div class="first">
+          <van-image
+            class="avatar"
+            round
+            width="4rem"
+            height="4rem"
+            :src="avatarUrl"
+          />
+          <div class="name">
+            <div>QQB</div>
+            <div>ID: weee7343219</div>
+          </div>
+          <div class="action"><van-icon name="share" size="1.5rem" /></div>
         </div>
-        <div class="action"><van-icon name="share" size="1.5rem" /></div>
+        <div class="login" v-if="true">
+          <van-button size="large" round type="success" to="sign"
+            >登入或注册</van-button
+          >
+        </div>
       </div>
       <div class="my-order"></div>
       <div class="my-action"></div>
@@ -82,23 +89,34 @@ export default defineComponent({
     width: 100%;
     border-radius: 5px;
     background: rgba(247, 194, 194, 0.486);
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     align-items: center;
     display: flex;
     margin: 10px;
-    .avatar {
-      flex-grow: 0;
-      flex-shrink: 0;
-      padding: 10px;
+    .first {
+      width: 100%;
+      flex-flow: row nowrap;
+      align-items: center;
+      display: flex;
+      .avatar {
+        flex-grow: 0;
+        flex-shrink: 0;
+        padding: 10px;
+      }
+      .name {
+        flex-grow: 10;
+        flex-shrink: 0;
+      }
+      .action {
+        flex-grow: 1;
+        flex-shrink: 0;
+        text-align: center;
+      }
     }
-    .name {
-      flex-grow: 10;
-      flex-shrink: 0;
-    }
-    .action {
-      flex-grow: 1;
-      flex-shrink: 0;
+    .login {
+      width: 100%;
       text-align: center;
+      margin: 10px;
     }
   }
   .my-order {

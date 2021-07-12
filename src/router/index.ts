@@ -4,6 +4,7 @@ import Home from '#/Home.vue'
 import Category from '#/Category.vue'
 import Social from '#/Social.vue'
 import Profile from '#/Profile.vue'
+import Sign from '#/Sign.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -29,6 +30,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/profile',
     name: 'Profile',
     component: Profile,
+  },
+  {
+    path: '/sign',
+    name: 'Sign',
+    component: Sign,
   },
 ]
 
