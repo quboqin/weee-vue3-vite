@@ -76,9 +76,9 @@ export default defineComponent({
   padding: 0 5px;
   .boxSizing();
   font-size: 15px;
-  z-index: 10000;
+  z-index: 1000;
   .icon {
-    flex-grow: 1;
+    flex-grow: 0;
     flex-shrink: 0;
   }
   .search-bar {
@@ -86,13 +86,14 @@ export default defineComponent({
     flex-shrink: 0;
   }
   .cart {
-    flex-grow: 1;
+    flex-grow: 0;
     flex-shrink: 0;
     text-align: center;
   }
 }
 .category-body {
   margin: 55px 0 0 0;
+  height: 100vh;
 }
 .goods {
   display: flex;

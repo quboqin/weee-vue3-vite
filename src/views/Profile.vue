@@ -6,8 +6,8 @@
       <div class="cart"><van-icon name="shopping-cart" size="1.5rem" /></div>
     </header>
     <div class="profile-body">
-      <div class="my-profile">
-        <div class="first">
+      <div class="profile-card">
+        <div class="profile">
           <van-image
             class="avatar"
             round
@@ -19,7 +19,7 @@
             <div>QQB</div>
             <div>ID: weee7343219</div>
           </div>
-          <div class="action"><van-icon name="share" size="1.5rem" /></div>
+          <div class="action"><van-icon name="arrow" size="1.5rem" /></div>
         </div>
         <div class="login" v-if="true">
           <van-button size="large" round type="success" to="sign"
@@ -64,52 +64,47 @@ export default defineComponent({
   padding: 0 5px;
   .boxSizing();
   font-size: 15px;
-  z-index: 10000;
+  z-index: 1000;
   .icon {
-    flex-grow: 0;
-    flex-shrink: 0;
+    flex: none;
   }
   .text-bar {
-    flex-grow: 10;
-    flex-shrink: 0;
+    flex: auto;
   }
   .cart {
-    flex-grow: 0;
-    flex-shrink: 0;
-    text-align: center;
+    flex: none;
   }
 }
 .profile-body {
   margin: 55px 0px;
+  height: 100vh;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   align-content: flex-start;
-  .my-profile {
+  background: #fff2f2;
+  .profile-card {
     width: 100%;
     border-radius: 5px;
-    background: rgba(247, 194, 194, 0.486);
+    background: #fffdfd;
     flex-flow: row wrap;
     align-items: center;
     display: flex;
     margin: 10px;
-    .first {
+    .profile {
       width: 100%;
       flex-flow: row nowrap;
       align-items: center;
       display: flex;
       .avatar {
-        flex-grow: 0;
-        flex-shrink: 0;
+        flex: none;
         padding: 10px;
       }
       .name {
-        flex-grow: 10;
-        flex-shrink: 0;
+        flex: auto;
       }
       .action {
-        flex-grow: 1;
-        flex-shrink: 0;
+        flex: none;
         text-align: center;
       }
     }

@@ -1,25 +1,19 @@
 <template>
   <div class="good-item">
-    <img :src="good.goodsCoverImg" alt="" />
+    <img :src="item.goodsCoverImg" alt="" />
     <div class="good-desc">
-      <div class="title">{{ good.goodsName }}</div>
-      <div class="price">¥ {{ good.sellingPrice }}</div>
+      <div class="title">{{ item.goodsName }}</div>
+      <div class="price">¥ {{ item.sellingPrice }}</div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, toRef } from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'good',
   props: ['item'],
-  setup(props) {
-    const good = toRef(props, 'item')
-    return {
-      good,
-    }
-  },
 })
 </script>
 
@@ -43,7 +37,7 @@ export default defineComponent({
       color: #222333;
     }
     .price {
-      color: @primary;
+      color: #1baeae;
     }
   }
   &:nth-child(2n + 1) {

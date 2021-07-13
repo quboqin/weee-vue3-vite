@@ -21,7 +21,6 @@ export default defineComponent({
     const tabs = [
       { icon: 'wap-home', to: 'home', title: '首页' },
       { icon: 'cluster', to: 'category', title: '分类' },
-      { icon: 'friends', to: 'social', title: '社区' },
       { icon: 'manager', to: 'profile', title: '我' },
     ]
 
