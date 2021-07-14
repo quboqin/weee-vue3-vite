@@ -27,8 +27,7 @@
           >
         </div>
       </div>
-      <div class="my-order"></div>
-      <div class="my-action"></div>
+      <div class="order" v-if="true"></div>
     </div>
   </div>
 </template>
@@ -114,9 +113,8 @@ export default defineComponent({
       margin: 10px;
     }
   }
-  .my-order {
-  }
-  .my-action {
+  .order {
+    background: #fffdfd;
   }
 }
 </style>

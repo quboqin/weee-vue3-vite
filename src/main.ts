@@ -9,6 +9,8 @@ import {
   Tab,
   Tabs,
   Image,
+  Field,
+  CellGroup,
 } from 'vant'
 
 import App from './App.vue'
@@ -26,5 +28,7 @@ app
   .use(Tab)
   .use(Tabs)
   .use(Image)
+  .use(Field)
+  .use(CellGroup)
 app.use(router)
 app.mount('#app')
