@@ -27,21 +27,53 @@
           >
         </div>
       </div>
-      <div class="order" v-if="true"></div>
+      <div class="order-card" v-if="true" @click="onClick">
+        <div class="title">我的订单</div>
+        <div class="avatar" v-for="(type, index) in orderTypes" :key="index">
+          <van-image
+            class="icon"
+            round
+            width="2rem"
+            height="2rem"
+            :src="orderImages[index]"
+          />
+          <div class="name">
+            {{ type }}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
+import { useRouter } from 'vue-router'
 
 import avatarUrl from '@/assets/avatar.jpg'
+import clock from '@/assets/icons8-clock-64.png'
+import box from '@/assets/icons8-box-64.png'
+import trunk from '@/assets/icons8-boot-open-64.png'
 
 export default defineComponent({
   name: 'profile',
   setup() {
-    return {
+    const router = useRouter()
+
+    const state = reactive({
+      orderTypes: ['全部订单', '待付款', '待发货'],
+      active: 0,
       avatarUrl,
+      orderImages: [clock, box, trunk],
+    })
+
+    function onClick() {
+      router.push('order-list')
+    }
+
+    return {
+      ...toRefs(state),
+      onClick,
     }
   },
 })
@@ -113,8 +145,25 @@ export default defineComponent({
       margin: 10px;
     }
   }
-  .order {
+  .order-card {
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
     background: #fffdfd;
+    .title {
+      padding: 5px;
+      text-align: left;
+      width: 100%;
+    }
+    .avatar {
+      padding: 10px 0px;
+      font-size: 12px;
+    }
   }
 }
 </style>

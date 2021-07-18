@@ -11,6 +11,7 @@ import {
   Image,
   Field,
   CellGroup,
+  Badge,
 } from 'vant'
 
 import App from './App.vue'
@@ -30,5 +31,6 @@ app
   .use(Image)
   .use(Field)
   .use(CellGroup)
+  .use(Badge)
 app.use(router)
 app.mount('#app')
