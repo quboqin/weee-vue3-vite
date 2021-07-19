@@ -6,6 +6,7 @@ import Social from '#/Social.vue'
 import Profile from '#/Profile.vue'
 import Sign from '#/Sign.vue'
 import OrderList from '#/OrderList.vue'
+import OrderDetail from '#/OrderDetail.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -41,6 +42,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/order-list',
     name: 'OrderList',
     component: OrderList,
+  },
+  {
+    path: '/order-detail',
+    name: 'OrderDetail',
+    component: OrderDetail,
   },
 ]
 

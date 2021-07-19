@@ -4,7 +4,7 @@
     <van-tabs v-model:active="active">
       <van-tab v-for="(type, index) in orderTypes" :title="type" :key="index">
         <div class="orders">
-          <order-box></order-box>
+          <order-box @click="onClick"></order-box>
         </div>
       </van-tab>
     </van-tabs>
@@ -13,6 +13,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue'
+import { useRouter } from 'vue-router'
 
 import CommonHeader from '@/components/Header.vue'
 import OrderBox from '@/components/OrderBox.vue'
@@ -29,8 +30,15 @@ export default defineComponent({
       active: 0,
     })
 
+    const router = useRouter()
+
+    function onClick() {
+      router.push('order-detail')
+    }
+
     return {
       ...toRefs(state),
+      onClick,
     }
   },
 })
@@ -39,6 +47,8 @@ export default defineComponent({
 <style lang="less" scoped>
 .order-body {
   margin: 55px 0 0 0;
+  background: #fff2f2;
+  height: 100vh;
 }
 .orders {
   display: flex;
