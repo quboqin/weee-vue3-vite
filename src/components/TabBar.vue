@@ -1,27 +1,39 @@
 <template>
-  <div class="tab-bar">
-    <router-link
-      v-for="tab in tabs"
-      :key="tab.to"
-      class="tab-bar-item"
-      :to="tab.to"
-    >
-      <van-icon :name="tab.icon" />
-      <span>{{ tab.title }}</span>
+  <div
+    class="
+      fixed
+      bottom-0
+      left-0
+      container
+      mx-auto
+      flex flex-row
+      justify-around
+      bg-yellow-100
+    "
+  >
+    <router-link v-for="tab in tabs" :key="tab.to" :to="tab.to" flex flex-col>
+      <div>
+        <home-icon className="h-1 w-1 text-blue-500" />
+      </div>
+      <div>
+        <span>{{ tab.title }}</span>
+      </div>
     </router-link>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { HomeIcon } from '@heroicons/vue/solid'
 
 export default defineComponent({
   name: 'tabbar',
+  components: { HomeIcon },
   setup() {
     const tabs = [
       { icon: 'wap-home', to: 'home', title: '首页' },
       { icon: 'cluster', to: 'category', title: '分类' },
-      { icon: 'manager', to: 'profile', title: '我' },
+      { icon: 'manager', to: 'profile', title: '我的' },
     ]
 
     return {
