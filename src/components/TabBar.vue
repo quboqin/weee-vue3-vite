@@ -11,8 +11,13 @@
       bg-yellow-100
     "
   >
-    <router-link v-for="tab in tabs" :key="tab.to" :to="tab.to" class="py-1">
-      <p :class="tab.icon" class="material-icons md-32 text-center"></p>
+    <router-link
+      v-for="tab in tabs"
+      :key="tab.to"
+      :to="tab.to"
+      class="py-1 focus:text-blue-500"
+    >
+      <p :class="tab.icon" class="text-2xl text-center leading-none"></p>
       <div>
         <span>{{ tab.title }}</span>
       </div>
