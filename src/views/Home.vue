@@ -1,25 +1,27 @@
 <template>
   <home-header />
   <swiper :list="swiperList"></swiper>
-  <div class="category-list">
+  <div class="container mx-auto flex flex-row flex-wrap justify-start">
     <div
       v-for="item in categoryList"
       v-bind:key="item.categoryId"
       @click="tips"
+      class="flex-none w-1/5 py-1"
     >
-      <img :src="item.imgUrl" />
-      <span>{{ item.name }}</span>
+      <img class="mx-auto h-12 w-12" :src="item.imgUrl" />
+      <p class="text-sm text-center">{{ item.name }}</p>
     </div>
   </div>
-  <div class="good-section">
-    <header class="good-header">新品上线</header>
+  <div class="container mx-auto">
+    <header class="text-center bg-gray-300 py-3">新品上线</header>
     <van-skeleton title :row="3" :loading="loading">
-      <div class="goods">
+      <div class="flex flex-row flex-wrap justify-start">
         <good-box
           v-for="item in newGoodses"
           :key="item.goodsId"
           :item="item"
           @click="goToDetail(item)"
+          class="w-1/2"
         >
         </good-box>
       </div>
@@ -58,41 +60,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less" scoped>
-.category-list {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  padding-bottom: 12px;
-  div {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    text-align: center;
-    img {
-      width: 36px;
-      height: 36px;
-      margin: 13px auto 8px auto;
-    }
-    span {
-      font-size: 12px;
-    }
-  }
-}
-.good-section {
-  .good-header {
-    background: #f9f9f9;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    color: #1baeae;
-    font-size: 16px;
-    font-weight: 500;
-  }
-  .goods {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+<style lang="less" scoped></style>
