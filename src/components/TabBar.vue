@@ -17,7 +17,7 @@
       :to="tab.to"
       class="py-1 focus:text-blue-500"
     >
-      <p :class="tab.icon" class="text-2xl text-center leading-none"></p>
+      <p :class="tab.icon" class="text-3xl text-center leading-none"></p>
       <div>
         <span>{{ tab.title }}</span>
       </div>
