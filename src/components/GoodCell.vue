@@ -1,17 +1,19 @@
 <template>
-  <div class="good-card">
-    <div class="icon">
-      <van-image
-        class="avatar"
-        round
-        width="4rem"
-        height="4rem"
-        :src="avatarUrl"
-      />
-    </div>
-    <div class="info">
-      <div>新鲜蟠桃 3 磅</div>
-      <div>单价: $22.99 | 数量: 1</div>
+  <div class="flex justify-between items-center">
+    <div class="flex justify-start items-center">
+      <div class="icon">
+        <van-image
+          class="p-2"
+          round
+          width="4rem"
+          height="4rem"
+          :src="avatarUrl"
+        />
+      </div>
+      <div class="pl-3">
+        <div>新鲜蟠桃 3 磅</div>
+        <div>单价: $22.99 | 数量: 1</div>
+      </div>
     </div>
     <div class="price">$22.99</div>
   </div>
@@ -32,27 +34,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less" scoped>
-.good-card {
-  width: 100%;
-  margin: 10px;
-  border-radius: 5px;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  background: #fffdfd;
-  .icon {
-    flex: none;
-  }
-  .info {
-    flex: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .price {
-    flex: none;
-  }
-}
-</style>
+<style lang="less" scoped></style>

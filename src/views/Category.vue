@@ -1,8 +1,23 @@
 <template>
   <div>
-    <header class="category-header">
-      <div class="icon"><van-icon name="wap-nav" size="1.5rem" /></div>
-      <div class="search-bar">
+    <header
+      class="
+        fixed
+        top-0
+        left-0
+        container
+        mx-auto
+        flex flex-row
+        justify-between
+        items-center
+        px-2
+      "
+    >
+      <p
+        class="mdi mdi-view-grid-outline text-3xl text-center leading-none"
+      ></p>
+
+      <div class="flex-auto">
         <van-search
           v-model="value"
           placeholder="请输入要搜索的商品"
@@ -10,21 +25,22 @@
           shape="round"
         />
       </div>
-      <div class="cart"><van-icon name="shopping-cart" size="1.5rem" /></div>
+      <p class="mdi mdi-cart text-3xl text-center leading-none"></p>
     </header>
-    <div class="category-body">
+    <div class="mt-10">
       <van-tabs v-model:active="active">
         <van-tab
           v-for="(category, index) in categoryList"
           :title="category.name"
           :key="index"
         >
-          <div class="goods">
+          <div class="flex flex-row flex-wrap justify-start">
             <good-box
               v-for="item in newGoodses"
               :key="item.goodsId"
               :item="item"
               @click="goToDetail(item)"
+              class="w-1/2"
             >
             </good-box>
           </div>
@@ -60,44 +76,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less" scoped>
-@import '../common/style/mixin';
-.category-header {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 55px;
-  background: rgba(194, 194, 194, 0.486);
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 5px;
-  .boxSizing();
-  font-size: 15px;
-  z-index: 1000;
-  .icon {
-    flex-grow: 0;
-    flex-shrink: 0;
-  }
-  .search-bar {
-    flex-grow: 10;
-    flex-shrink: 0;
-  }
-  .cart {
-    flex-grow: 0;
-    flex-shrink: 0;
-    text-align: center;
-  }
-}
-.category-body {
-  margin: 55px 0 0 0;
-  height: 100vh;
-}
-.goods {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-</style>
+<style lang="less" scoped></style>

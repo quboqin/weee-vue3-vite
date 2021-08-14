@@ -1,7 +1,7 @@
 <template>
   <common-header title="订单详情" />
-  <div class="order-body">
-    <div class="order-status">
+  <div class="mt-10 m-4">
+    <div class="flex justify-start">
       <div>
         <van-image class="box" width="4rem" height="4rem" :src="box" />
       </div>
@@ -10,9 +10,9 @@
         <div>你的订单已在 2021-02-12 送达</div>
       </div>
     </div>
-    <div class="deliver">
+    <div class="">
       <div>配送信息</div>
-      <div class="deliver-card">
+      <div class="bg-gray-100 rounded p-3">
         <div class="time">
           <div>送货时间</div>
           <div>2021-02-12 星期五 3:00 PM - 9:00 PM</div>
@@ -23,9 +23,9 @@
         </div>
       </div>
     </div>
-    <div class="good">
+    <div class="">
       <div>商品信息</div>
-      <div class="good-list">
+      <div class="">
         <good-cell />
         <good-cell />
       </div>
@@ -56,47 +56,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less" scoped>
-.order-body {
-  margin: 55px 0;
-  background: #fff2f2;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  align-content: flex-start;
-  height: 100vh;
-  .order-status {
-    width: 100%;
-    border-radius: 10px;
-    margin: 10px;
-    background: #fffdfd;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-  .deliver {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    width: 100%;
-    .deliver-card {
-      width: 100%;
-      border-radius: 10px;
-      margin: 10px;
-      background: #fffdfd;
-    }
-  }
-  .good {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    width: 100%;
-    .good-list {
-      display: flex;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      width: 100%;
-    }
-  }
-}
-</style>
+<style lang="less" scoped></style>

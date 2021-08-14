@@ -1,9 +1,9 @@
 <template>
   <common-header title="我的订单" />
-  <div class="order-body">
+  <div class="mt-10 m-4">
     <van-tabs v-model:active="active">
       <van-tab v-for="(type, index) in orderTypes" :title="type" :key="index">
-        <div class="orders">
+        <div class="p-3">
           <order-box @click="onClick"></order-box>
         </div>
       </van-tab>
@@ -44,15 +44,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less" scoped>
-.order-body {
-  margin: 55px 0 0 0;
-  background: #fff2f2;
-  height: 100vh;
-}
-.orders {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-</style>
+<style lang="less" scoped></style>

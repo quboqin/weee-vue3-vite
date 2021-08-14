@@ -1,8 +1,18 @@
 <template>
-  <header class="header">
-    <div class="icon">
-      <van-icon name="arrow-left" size="1.5rem" @click="onBack" />
-    </div>
+  <header
+    class="
+      contained
+      w-screen
+      leading-10
+      text-center
+      fixed
+      top-0
+      left-0
+      flex flex-row
+      justify-between
+    "
+  >
+    <p class="mdi mdi-chevron-left text-3xl" @click="onBack"></p>
     <div class="title">{{ title }}</div>
     <div class="blank"></div>
   </header>
@@ -27,30 +37,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less" scoped>
-.header {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 55px;
-  background: rgba(194, 194, 194, 0.486);
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 5px;
-  z-index: 1000;
-  .icon {
-    flex: none;
-  }
-  .title {
-    flex: auto;
-    text-align: center;
-  }
-  .blank {
-    flex: none;
-    width: 24px;
-  }
-}
-</style>
+<style lang="less" scoped></style>

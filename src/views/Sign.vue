@@ -1,11 +1,11 @@
 <template>
   <common-header title="登入" />
-  <div class="content">
-    <div class="tabs">
-      <div class="section">
+  <div class="mt-10 m-4">
+    <div class="flex justify-between py-3">
+      <div class="text-center">
         {{ loginMethods[0] }}
       </div>
-      <div class="section">
+      <div class="text-center">
         {{ loginMethods[1] }}
       </div>
     </div>
@@ -51,22 +51,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less" scoped>
-.content {
-  margin: 55px 0px;
-  height: 100vh;
-  background: #fff2f2;
-  .tabs {
-    padding: 10px 0px;
-    display: flex;
-    justify-content: space-between;
-    .section {
-      width: 50%;
-      text-align: center;
-    }
-  }
-  .action {
-    padding: 15px;
-  }
-}
-</style>
+<style lang="less" scoped></style>
