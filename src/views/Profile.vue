@@ -1,21 +1,32 @@
 <template>
   <div>
-    <div class="fixed top-0 left-0 contained w-screen leading-10 text-center">
+    <div
+      class="
+        fixed
+        top-0
+        left-0
+        contained
+        w-screen
+        leading-10
+        text-center text-gray-600
+        bg-red-100
+      "
+    >
       我的
     </div>
-    <div class="mt-10 m-4">
-      <div class="contained mx-auto bg-gray-200 rounded">
-        <div class="m-2 flex flex-row items-center justify-between">
-          <div class="flex flex-row items-center justify-start">
+    <div class="mt-14 m-4">
+      <div class="contained bg-red-100 rounded-md">
+        <div class="m-2 flex items-center justify-between">
+          <div class="flex items-center justify-start">
             <van-image
-              class="mt-4 my-2"
+              class="my-4"
               round
               width="4rem"
               height="4rem"
               :src="avatarUrl"
             />
-            <div class="ml-2">
-              <div>QQB</div>
+            <div class="ml-2 text-gray-600">
+              <div class="font-semibold">QQB</div>
               <div>ID: weee7343219</div>
             </div>
           </div>
@@ -24,9 +35,14 @@
           ></p>
         </div>
       </div>
-      <div class="bg-gray-50 rounded" v-if="true" @click="onClick">
-        <div class="title">我的订单</div>
-        <div class="flex flex-row justify-between p-2">
+      <div
+        class="text-gray-600 bg-red-100 rounded-md mb-2"
+        v-if="true"
+        @click="onOrder"
+      >
+        <div class="title pl-2 pt-2">我的订单</div>
+        <hr class="bg-gray-800 m-2" />
+        <div class="flex justify-between py-2 px-4">
           <div class="" v-for="(type, index) in orderTypes" :key="index">
             <img class="mx-auto h-8 w-8" :src="orderImages[index]" />
             <div class="text-center">
@@ -35,17 +51,19 @@
           </div>
         </div>
       </div>
-      <div class="" v-if="true">
-        <van-button size="large" round type="success" to="sign"
+      <div class="mt-4" v-if="true">
+        <van-button size="large" round type="success" to="sign" @click="onLogin"
           >登入或注册</van-button
         >
       </div>
     </div>
   </div>
+  <tab-bar></tab-bar>
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue'
+import TabBar from '@/components/TabBar.vue'
 import { useRouter } from 'vue-router'
 
 import avatarUrl from '@/assets/avatar.jpg'
@@ -55,6 +73,9 @@ import trunk from '@/assets/icons8-boot-open-64.png'
 
 export default defineComponent({
   name: 'profile',
+  components: {
+    TabBar,
+  },
   setup() {
     const router = useRouter()
 
@@ -65,13 +86,18 @@ export default defineComponent({
       orderImages: [clock, box, trunk],
     })
 
-    function onClick() {
+    function onOrder() {
       router.push('order-list')
+    }
+
+    function onLogin() {
+      router.push('sign')
     }
 
     return {
       ...toRefs(state),
-      onClick,
+      onOrder,
+      onLogin,
     }
   },
 })

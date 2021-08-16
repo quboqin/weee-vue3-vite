@@ -8,8 +8,10 @@
       fixed
       top-0
       left-0
-      flex flex-row
+      flex
       justify-between
+      text-gray-600
+      bg-red-100
     "
   >
     <p class="mdi mdi-chevron-left text-3xl" @click="onBack"></p>

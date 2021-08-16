@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import {
-  Icon,
   Button,
   Search,
   Swipe,
@@ -21,7 +20,6 @@ import './index.css'
 
 const app = createApp(App)
 app
-  .use(Icon)
   .use(Button)
   .use(Search)
   .use(Swipe)

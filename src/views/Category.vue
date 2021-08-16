@@ -6,11 +6,12 @@
         top-0
         left-0
         container
-        mx-auto
-        flex flex-row
+        flex
         justify-between
         items-center
         px-2
+        text-gray-600
+        bg-red-100
       "
     >
       <p
@@ -27,14 +28,14 @@
       </div>
       <p class="mdi mdi-cart text-3xl text-center leading-none"></p>
     </header>
-    <div class="mt-10">
+    <div class="mt-14">
       <van-tabs v-model:active="active">
         <van-tab
           v-for="(category, index) in categoryList"
           :title="category.name"
           :key="index"
         >
-          <div class="flex flex-row flex-wrap justify-start">
+          <div class="flex flex-wrap justify-start">
             <good-box
               v-for="item in newGoodses"
               :key="item.goodsId"
@@ -48,10 +49,12 @@
       </van-tabs>
     </div>
   </div>
+  <tab-bar></tab-bar>
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue'
+import TabBar from '@/components/TabBar.vue'
 import GoodBox from '@/components/GoodBox.vue'
 
 import category from '../mock/category.json'
@@ -60,6 +63,7 @@ import goods from '../mock/goods.json'
 export default defineComponent({
   name: 'category',
   components: {
+    TabBar,
     GoodBox,
   },
   setup() {

@@ -1,18 +1,27 @@
 <template>
   <common-header title="订单详情" />
-  <div class="mt-10 m-4">
-    <div class="flex justify-start">
+  <div class="mt-14 m-4">
+    <div
+      class="
+        flex
+        justify-start
+        text-gray-600
+        items-center
+        bg-red-100
+        rounded-md
+      "
+    >
       <div>
         <van-image class="box" width="4rem" height="4rem" :src="box" />
       </div>
-      <div>
+      <div class="pl-2">
         <div>你的订单已完成</div>
         <div>你的订单已在 2021-02-12 送达</div>
       </div>
     </div>
-    <div class="">
+    <div class="text-gray-600 mt-2">
       <div>配送信息</div>
-      <div class="bg-gray-100 rounded p-3">
+      <div class="bg-red-100 rounded p-3 mt-1">
         <div class="time">
           <div>送货时间</div>
           <div>2021-02-12 星期五 3:00 PM - 9:00 PM</div>
@@ -23,9 +32,9 @@
         </div>
       </div>
     </div>
-    <div class="">
+    <div class="text-gray-600 mt-2">
       <div>商品信息</div>
-      <div class="">
+      <div class="bg-red-100 rounded p-3 mt-1">
         <good-cell />
         <good-cell />
       </div>

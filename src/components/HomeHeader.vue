@@ -1,18 +1,34 @@
 <template>
-  <header class="fixed left-0 top-0 container mx-auto">
-    <div class="flex flex-row justify-between items-center px-2">
-      <div class="py-2 flex flex-row justify-start items-center">
+  <header class="fixed left-0 top-0 container text-gray-600 bg-red-100">
+    <div class="flex justify-between items-center px-2">
+      <div class="py-2 flex justify-start items-center">
         <p class="mdi mdi-map-marker text-3xl text-center leading-none"></p>
         <div>
           <div class="font-semibold leading-none">Folsom</div>
           <div class="leading-none">95630</div>
         </div>
       </div>
-      <div class="flex-auto flex flex-row justify-center items-center">
+      <div
+        class="
+          flex-auto flex
+          justify-center
+          items-center
+          bg-red-50
+          rounded-full
+          mx-4
+        "
+      >
         <div></div>
         <div class="text-center leading-none">送货日 周四 7/1</div>
         <p
-          class="mdi mdi-chevron-down text-2xl text-center leading-none px-2"
+          class="
+            mdi mdi-chevron-down
+            text-2xl
+            font-semibold
+            text-center
+            leading-none
+            px-2
+          "
         ></p>
       </div>
       <p class="py-2 mdi mdi-cart text-3xl text-center leading-none"></p>
@@ -33,7 +49,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'homeheader',
+  name: 'home-header',
 })
 </script>
 

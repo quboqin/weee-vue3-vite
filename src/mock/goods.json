@@ -34,5 +34,23 @@
       "https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/mate40-silver.png",
     "sellingPrice": 6488,
     "tag": "跃见非凡"
+  },
+  {
+    "goodsId": 10902,
+    "goodsName": "华为 HUAWEI P40 冰霜银 全网通5G手机",
+    "goodsIntro": "麒麟990 5G SoC芯片 5000万超感...",
+    "goodsCoverImg":
+      "https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/p40-silver.png",
+    "sellingPrice": 4299,
+    "tag": "超感知影像"
+  },
+  {
+    "goodsId": 10907,
+    "goodsName": "HUAWEI Mate 40 Pro 全网通5G手机 8GB...",
+    "goodsIntro": "5nm麒麟9000旗舰芯片 | 超感光徕卡电...",
+    "goodsCoverImg":
+      "https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/mate40-silver.png",
+    "sellingPrice": 6488,
+    "tag": "跃见非凡"
   }
 ]

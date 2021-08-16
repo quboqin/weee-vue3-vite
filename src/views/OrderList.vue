@@ -1,10 +1,10 @@
 <template>
   <common-header title="我的订单" />
-  <div class="mt-10 m-4">
+  <div class="mt-14 m-4">
     <van-tabs v-model:active="active">
       <van-tab v-for="(type, index) in orderTypes" :title="type" :key="index">
-        <div class="p-3">
-          <order-box @click="onClick"></order-box>
+        <div class="p-3 mt-3 bg-red-100 rounded-md" @click="onClick">
+          <order-box></order-box>
         </div>
       </van-tab>
     </van-tabs>
