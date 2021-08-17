@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed left-0 top-0 container text-gray-600 bg-red-100">
+  <header class="z-50 fixed left-0 top-0 container text-gray-600 bg-red-100">
     <div class="flex justify-between items-center px-2">
       <div class="py-2 flex justify-start items-center">
         <p class="mdi mdi-map-marker text-3xl text-center leading-none"></p>

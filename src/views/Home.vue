@@ -1,18 +1,19 @@
 <template>
   <home-header />
   <swiper :list="swiperList"></swiper>
-  <div class="container flex flex-wrap justify-between">
-    <div
-      v-for="item in categoryList"
-      v-bind:key="item.categoryId"
-      @click="tips"
-      class="flex-none w-1/5 py-1"
-    >
-      <img class="mx-auto h-12 w-12" :src="item.imgUrl" />
-      <p class="text-sm text-gray-500 text-center">{{ item.name }}</p>
-    </div>
-  </div>
   <div class="container">
+    <div class="flex flex-wrap justify-between">
+      <div
+        v-for="item in categoryList"
+        v-bind:key="item.categoryId"
+        @click="tips"
+        class="flex-none w-1/5 py-1"
+      >
+        <img class="mx-auto h-12 w-12" :src="item.imgUrl" />
+        <p class="text-sm text-gray-500 text-center">{{ item.name }}</p>
+      </div>
+    </div>
+
     <header class="text-center bg-red-100 text-gray-500 py-3">新品上线</header>
     <van-skeleton title :row="3" :loading="loading">
       <div class="flex flex-wrap justify-start">
@@ -27,6 +28,7 @@
       </div>
     </van-skeleton>
   </div>
+
   <tab-bar></tab-bar>
 </template>
 

@@ -2,6 +2,7 @@
   <div>
     <header
       class="
+        z-50
         fixed
         top-0
         left-0
